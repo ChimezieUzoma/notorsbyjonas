@@ -1,0 +1,45 @@
+@mixin clearfix{
+    &::after{
+     content: '';
+    display: table;
+    clear: both;
+    }
+}
+
+@mixin absCenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//media query manager
+/*
+0 - 600px       mobile
+600 - 900px     tablet protrait
+900 - 1200px    tablet landscape
+1200 - 1800px   normal style
+1800 - +        big screen */
+/* breakpoint argument choices:
+-phone
+-tab-pot
+-tab-land
+-big-desktop*/
+
+//media query order: base - topography-grneral layout-grid-page layout-components
+
+@mixin respond($breakpoints){
+    @if $breakpoints == phone{
+        @media(max-width: 37.5em){@content}; //600px
+    }
+    @if $breakpoints == tab-port{
+        @media(max-width: 56.25em) {@content}; //900px
+    }
+    @if $breakpoints == tab-land{
+        @media(max-width: 75em) {@content}; //1200px
+    }
+    @if $breakpoints == big-desktop{
+        @media(min-width: 112.5em) {@content}; //1800px
+    }
+    
+}

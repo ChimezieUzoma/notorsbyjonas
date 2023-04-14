@@ -1,0 +1,53 @@
+.header{
+    background-image:linear-gradient(to right, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.8)) , url(../sass/img/front.jpg);
+    background-position: top;
+    background-size: cover;
+    height: 95vh;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+
+    @include respond(phone){
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);  
+    }
+
+    &__text-box{
+    color: $color-white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    text-align: center;
+    }
+
+    &-primary--main{
+        display: block;
+        font-size: 4rem;
+        letter-spacing: 3rem;
+        font-weight: 400;
+        animation-name: moveInLeft;
+        animation-timing-function: ease-out;
+        animation-duration: 3s;
+
+        @include respond(phone){
+            letter-spacing: 1rem;
+            font-size: 4rem;
+        }
+        }
+
+        &-primary--down{
+            display: block;
+            font-size: 1.7rem;
+            letter-spacing: 1.2rem;
+            font-weight: 700;
+            animation-name: moveInright;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+
+            @include respond(phone){
+                letter-spacing: .5rem;
+            }
+
+        }
+}

@@ -1,0 +1,64 @@
+.footer{
+    background-color: #333;
+    padding: 18rem 0;
+    font-size: 1.4rem;
+
+    @include respond(tab-port){
+        padding: 8rem 0;
+    }
+
+    &__navigation{
+        border-top: 1px solid #777;
+        padding-top: 3rem;
+        display: inline-block;
+
+        @include respond(tab-port){
+          width: 100%;
+          text-align: center;
+        }
+    }
+
+    &__list{
+        list-style: none;
+    }
+
+    &__item{
+        
+        display: inline-block;
+
+        &:not(:last-child){
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__link{
+        &:link, 
+        &:visited{
+            color: #f7f7f7;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            background-color: #333;
+
+            &:hover, 
+        &:active{
+            color: $color-primary;
+            box-shadow: 0 1rem 3rem rgba($color-black, 0.4);
+            transform: skewY(8deg) skewX(2deg) scale(1.02);
+        }
+        }
+
+        
+    }
+
+    &__copyright{
+        color: #f7f7f7;
+        border-top: 1px solid #777;
+        padding-top: 3rem;
+
+        @include respond(tab-port){
+            width: 100%;
+            text-align: center;
+          }
+    }
+}
